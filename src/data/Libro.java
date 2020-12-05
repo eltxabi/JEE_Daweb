@@ -2,13 +2,20 @@ package data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name = "libros")
 public class Libro {
 	@Id
 	private int isbn;
 	private String titulo;
 	private String autor;
+	
+	public Libro() {
+		
+	}
 	
 	public Libro(int isbn, String titulo, String autor) {
 		super();
