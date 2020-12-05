@@ -1,6 +1,11 @@
 package data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Libro {
+	@Id
 	private int isbn;
 	private String titulo;
 	private String autor;
