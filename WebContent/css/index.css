@@ -1,0 +1,15 @@
+@charset "UTF-8";
+form{
+	border: 2px solid black;
+	width: 250px;
+}
+
+table{
+	border: 1px solid black;
+	width:500px;
+	text-align:center;
+}
+
+tr{
+	background-color:#00FF7F;
+}
