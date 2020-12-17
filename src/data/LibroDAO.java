@@ -30,7 +30,20 @@ public class LibroDAO {
 		
 	}
 
-	
+	public boolean addLibro(Libro libro) {
+		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+		EntityManager em = factory.createEntityManager();
+	    try {
+	        em.getTransaction().begin();
+	        em.persist(libro);
+	        em.getTransaction().commit();
+	      } catch (Exception e) {
+	        e.printStackTrace();
+	      } finally {
+	        em.close();
+	      }
+	    return true;
+	}
 	
 	
 }

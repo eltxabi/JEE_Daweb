@@ -40,13 +40,21 @@ public class LibrosController extends HttpServlet {
 			ArrayList<Libro> libros = libroDAO.getLibros();
 			
 			request.setAttribute("libros", libros);
-			
 			despachador = request.getServletContext().getRequestDispatcher("/index.jsp");
 			despachador.forward(request, response);
 			
-		} else if (request.getServletPath().equals("/insertar")) {
-			despachador = request.getServletContext().getRequestDispatcher("/prueba.jsp");
-			despachador.forward(request, response);
+		} else if (request.getServletPath().equals("insertar")) {
+			LibroDAO libroDAO = new LibroDAO();
+			
+			int isbn = Integer.parseInt(request.getParameter("isbn"));
+			String titulo = request.getParameter("titulo");
+			String autor = request.getParameter("autor");
+			
+			Libro libro = new Libro(isbn,titulo,autor);
+			libroDAO.addLibro(libro);
+			
+			response.sendRedirect(request.getContextPath() + "");
+					
 		}
 	}
 

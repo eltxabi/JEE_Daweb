@@ -29,13 +29,13 @@
 
 
 
-<!--  
+
 <form action="insertar"  method="post">
 	ISBN:<input type="text" name="isbn">
 	Titulo:<input type="text" name="titulo">
 	Autor:<input type="text" name="autor">
 	<input type="submit">
 </form>
--->
+
 </body>
 </html>
